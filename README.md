@@ -30,3 +30,5 @@ Paso uno // paso uno agregar variables
        que son Math.floor y Math.random 
       //que_es_Math_floor_Math_random_100_mas_1.txt
 
+## Funciones
+una funcion que da un mensaje 00_sub01_funciones.html
