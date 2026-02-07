@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Atrapa el Botón</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+    
+    #zona-juego {
+      position: relative;
+      width: 600px;
+      height: 400px;
+      margin: 20px auto;
+      background-color: white;
+      border: 3px solid #333;
+      border-radius: 10px;
+    }
+    
+    #boton {
+      position: absolute;
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.1s;
+    }
+    
+    #boton:hover {
+      background-color: #45a049;
+      transform: scale(1.1);
+    }
+    
+    .info {
+      font-size: 24px;
+      margin: 10px;
+      font-weight: bold;
+    }
+    
+    #mensaje {
+      font-size: 20px;
+      color: #666;
+      min-height: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎯 Atrapa el Botón</h1>
+  <p id="mensaje">Haz click en el botón que se mueve. ¡Tienes 30 segundos!</p>
+  
+  <div class="info">
+    Clicks: <span id="contador">0</span> | 
+    Tiempo: <span id="tiempo">30</span>s
+  </div>
+  
+  <div id="zona-juego">
+    <button id="boton">¡Atrápame!</button>
+  </div>
+  
+  <button id="reiniciar" style="display:none; padding:10px 20px; font-size:16px;">
+    Jugar otra vez
+  </button>
+
+  <script>
+    let clicks = 0;
+    let tiempoRestante = 30;
+    let velocidad = 1000; // milisegundos entre movimientos (empieza lento)
+    let juegoActivo = false;
+    let intervaloMovimiento;
+    let intervaloTiempo;
+    
+    const boton = document.getElementById('boton');
+    const contador = document.getElementById('contador');
+    const tiempoElemento = document.getElementById('tiempo');
+    const mensaje = document.getElementById('mensaje');
+    const reiniciar = document.getElementById('reiniciar');
+    const zonaJuego = document.getElementById('zona-juego');
+    
+    // Mover el botón a posición aleatoria
+    function moverBoton() {
+      const maxX = zonaJuego.offsetWidth - boton.offsetWidth;
+      const maxY = zonaJuego.offsetHeight - boton.offsetHeight;
+      
+      const x = Math.floor(Math.random() * maxX);
+      const y = Math.floor(Math.random() * maxY);
+      
+      boton.style.left = x + 'px';
+      boton.style.top = y + 'px';
+    }
+    
+    // Iniciar el juego
+    function iniciarJuego() {
+      clicks = 0;
+      tiempoRestante = 30;
+      velocidad = 1000;
+      juegoActivo = true;
+      
+      contador.textContent = clicks;
+      tiempoElemento.textContent = tiempoRestante;
+      mensaje.textContent = '¡Juego iniciado! Haz click lo más rápido posible';
+      reiniciar.style.display = 'none';
+      
+      moverBoton();
+      
+      // Mover el botón cada vez más rápido
+      intervaloMovimiento = setInterval(moverBoton, velocidad);
+      
+      // Cuenta regresiva
+      intervaloTiempo = setInterval(function() {
+        tiempoRestante--;
+        tiempoElemento.textContent = tiempoRestante;
+        
+        if (tiempoRestante <= 0) {
+          terminarJuego();
+        }
+      }, 1000);
+    }
+    
+    // Terminar el juego
+    function terminarJuego() {
+      juegoActivo = false;
+      clearInterval(intervaloMovimiento);
+      clearInterval(intervaloTiempo);
+      
+      mensaje.textContent = '🎮 ¡Fin del juego! Conseguiste ' + clicks + ' clicks';
+      reiniciar.style.display = 'inline-block';
+      boton.style.display = 'none';
+    }
+    
+    // Cuando hacen click en el botón
+    boton.onclick = function() {
+      if (!juegoActivo) {
+        iniciarJuego();
+      } else {
+        clicks++;
+        contador.textContent = clicks;
+        
+        // Aumentar velocidad cada 5 clicks
+        if (clicks % 5 === 0) {
+          velocidad = Math.max(200, velocidad - 100); // No más rápido que 200ms
+          clearInterval(intervaloMovimiento);
+          intervaloMovimiento = setInterval(moverBoton, velocidad);
+          mensaje.textContent = '⚡ ¡Velocidad aumentada!';
+        }
+        
+        moverBoton();
+      }
+    };
+    
+    // Botón de reiniciar
+    reiniciar.onclick = function() {
+      boton.style.display = 'inline-block';
+      iniciarJuego();
+    };
+    
+    // Posición inicial
+    moverBoton();
+  </script>
+</body>
+</html>

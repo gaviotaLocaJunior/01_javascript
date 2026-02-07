@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>Contador de clicks</h1>
+  <button id="boton">Haz click</button>
+  <p>Clicks: <span id="contador">0</span></p>
+
+  <script>
+    let clicks = 0;
+    document.getElementById('boton').onclick = function() {
+      clicks++;
+      document.getElementById('contador').textContent = clicks;
+    };
+  </script>
+</body>
+</html>
