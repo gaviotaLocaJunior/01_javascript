@@ -23,4 +23,7 @@ se le debe dar al jugador la opción de volver a jugar.
 ## Configuracion inicial
 
 Un ejemplo de MDN https://github.com/mdn/learning-area/blob/main/javascript/introduction-to-js-1/first-splash/number-guessing-game-start.html
-Aqui guardado como 
+Aqui guardado como 00_number-guessing-game-start.html
+
+Paso uno // paso uno agregar variables
+00_number-guessing-game-paso_1.html
