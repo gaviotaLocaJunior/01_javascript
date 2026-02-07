@@ -52,3 +52,8 @@ ejemplo_simple_interactividad_juego.html
 00_number-guessing-game-paso01.html Aqui devuelvo parrafos para informar usuario 
 y intento hacer solo una prueba de obtener numero del usuario, compronbar lo y salir resultado
 
+Me quedan aqui https://developer.mozilla.org/es/docs/Learn_web_development/Core/Scripting/A_first_splash#finalizando_la_funcionalidad_del_juego
+Finalizar el juego. 
+Resumen me pare a las 18:00 Entonces trabajo 6 hortas Me falta concetracion y tengo que explicar a mi mismo cada paso
+
+adivina-numero.js es ejemplo lo que genero Claude
