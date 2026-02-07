@@ -27,4 +27,6 @@ Aqui guardado como 00_number-guessing-game-start.html
 
 Paso uno // paso uno agregar variables
 00_number-guessing-game-paso01.html de aqui vamos un poco hice simple del original
+       que son Math.floor y Math.random 
+      //que_es_Math_floor_Math_random_100_mas_1.txt
 
