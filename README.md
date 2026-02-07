@@ -26,4 +26,5 @@ Un ejemplo de MDN https://github.com/mdn/learning-area/blob/main/javascript/intr
 Aqui guardado como 00_number-guessing-game-start.html
 
 Paso uno // paso uno agregar variables
-00_number-guessing-game-paso_1.html
+00_number-guessing-game-paso01.html de aqui vamos un poco hice simple del original
+
