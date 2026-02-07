@@ -49,3 +49,6 @@ Ejemplos simple del Claude
 ejemplo_simple_interactividad.html
 ejemplo_simple_interactividad_juego.html
 
+00_number-guessing-game-paso01.html Aqui devuelvo parrafos para informar usuario 
+y intento hacer solo una prueba de obtener numero del usuario, compronbar lo y salir resultado
+
