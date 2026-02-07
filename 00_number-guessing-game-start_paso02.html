@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Number guessing game</title>
+
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+
+      body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 0 auto;
+      }
+      
+      .form input[type="number"] {
+        width: 200px;
+      }
+
+      .lastResult {
+        color: white;
+        padding: 3px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Number guessing game</h1>
+
+    <p>We have selected a random number between 1 and 100. See if you can
+    guess it in 10 turns or fewer. We'll tell you if your guess was
+    too high or too low.</p>
+    <!--<h1>Juego adivina el número</h1>
+    <p>Hemos seleccionado un número aleatorio entre 1 y 100. Fíjate si
+    lo puedes adivinar en 10 turnos o menos. Vamos a decirte si tu número
+    es más alto o más bajo. </p>-->
+    
+    <div class="form">
+      <label for="guessField">Enter a guess: </label> <!-- Adivina el número : -->
+      <input type="number" min="1" max="100" required id="guessField" class="guessField">
+      <input type="submit" value="Submit guess" class="guessSubmit">
+    </div>
+
+    <div class="resultParas">
+      <p class="guesses"></p>
+      <p class="lastResult"></p>
+      <p class="lowOrHi"></p>
+    </div>
+
+    <script>
+
+      // paso uno agregar variables
+      // Enlace apuntes variables
+      let randNum = Math.floor(Math.random() * 100) + 1; // informacion console.log(Math) console.dir(Math) pero no hay mucho
+      // que son Math.floor y Math.random 
+      //que_es_Math_floor_Math_random_100_mas_1.txt
+      
+      let guessCount = 0; // esto es claro, es un almacen de intentos desde cero (original es 1)
+      
+      //let resetButton;
+      
+      //usamos para informar que ocerre al usuario (referencias o handle de los elementos en la pagina
+      const guesses = document.querySelector(".guesses");
+      const lastResult = document.querySelector(".lastResult");
+      const lowOrHi = document.querySelector(".lowOrHi");
+      
+      // las referencias a la entrada de texto y al boton Submit
+      const guessField = document.querySelector(".guessField");
+      const guessSubmit = document.querySelector(".guessSubmit");
+      
+      // paso dos voy a intentar hacer una prueba Solo una prueba.
+      // primero como obtener intento del usuario
+      // hacemos funcion y despues llamamoslo del evento del buton click
+      function checkGuess() {
+          let userGuess = Number(guessField.value);
+          
+          if (userGuess === randNum){
+              lastResult.textContent = "Felicidades";
+              lastResult.style.backgroundColor = "green";
+              lowOrHi.textContent = "";
+          } else {
+              lastResult.textContent = "Incorrecto";
+              lastResult.style.backgroundColor = "red";
+          }
+              
+          if (userGuess < randNum) lowOrHi.textContent = " muy bajo";
+          else lowOfHi.textContent = "muy alto";    
+      }
+      
+      lowOrHi.textContent = "Que " + randNum;
+      guessSubmit.addEventListener("click", checkGuess);
+      
+      
+      
+    </script>
+  </body>
+</html>
