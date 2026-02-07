@@ -46,3 +46,6 @@ Hostia pagina original tiene ejemplo de codigo largo de puta madre
 https://developer.mozilla.org/es/docs/Learn_web_development/Core/Scripting/A_first_splash#eventos
 Aqui me interesa porque no lo sabia
 Ejemplos simple del Claude
+ejemplo_simple_interactividad.html
+ejemplo_simple_interactividad_juego.html
+
