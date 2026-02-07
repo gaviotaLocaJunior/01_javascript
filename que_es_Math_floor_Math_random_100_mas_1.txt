@@ -1,0 +1,44 @@
+¿Qué hace?
+Genera un número aleatorio entero entre 1 y 100 (inclusive).
+Desglosemos cada parte:
+
+Math.random()
+
+Genera un número decimal aleatorio entre 0 (inclusive) y 1 (exclusive)
+Ejemplos: 0.156, 0.893, 0.002, 0.999...
+Nunca llega exactamente a 1
+
+
+Math.random() * 100
+
+Multiplica ese decimal por 100
+Ahora tienes números entre 0 y 99.999...
+Ejemplos: 15.6, 89.3, 0.2, 99.9...
+
+
+Math.floor(...)
+
+Redondea hacia abajo, eliminando los decimales
+Math.floor(15.6) → 15
+Math.floor(89.3) → 89
+Ahora tienes enteros del 0 al 99
+
+
++ 1
+
+Suma 1 a todo
+Del rango 0-99 pasamos al rango 1-100
+
+
+
+¿Para qué sirve?
+
+Juegos (tirar un dado de 100 caras)
+Seleccionar elementos aleatorios de una lista
+Simulaciones
+Generar datos de prueba
+
+Otros ejemplos útiles:
+javascriptMath.floor(Math.random() * 6) + 1      // dado de 6 (1-6)
+Math.floor(Math.random() * 10)         // números 0-9
+Math.floor(Math.random() * 50) + 50    // números 50-99
