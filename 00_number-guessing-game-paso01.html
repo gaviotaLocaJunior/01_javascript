@@ -1,0 +1,67 @@
+!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Number guessing game</title>
+
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+
+      body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 0 auto;
+      }
+      
+      .form input[type="number"] {
+        width: 200px;
+      }
+
+      .lastResult {
+        color: white;
+        padding: 3px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Number guessing game</h1>
+
+    <p>We have selected a random number between 1 and 100. See if you can
+    guess it in 10 turns or fewer. We'll tell you if your guess was
+    too high or too low.</p>
+    <!--<h1>Juego adivina el número</h1>
+    <p>Hemos seleccionado un número aleatorio entre 1 y 100. Fíjate si
+    lo puedes adivinar en 10 turnos o menos. Vamos a decirte si tu número
+    es más alto o más bajo. </p>-->
+    
+    <div class="form">
+      <label for="guessField">Enter a guess: </label> <!-- Label del edit field Adivina el número : -->
+      <input type="number" min="1" max="100" required id="guessField" class="guessField"> <!-- Edit Field -->
+      <input type="submit" value="Submit guess" class="guessSubmit"> <!-- Boton -->                         
+    </div>
+
+   
+
+    <script>
+
+      // paso uno agregar variables
+      
+      // Enlace apuntes variables
+      // Creamos y iniciamos numero secreto como numero aLEATORIO desde 1 al 100
+      let randNum = Math.floor(Math.random() * 100) + 1; // informacion console.log(Math) console.dir(Math) pero no hay mucho
+      // que son Math.floor y Math.random 
+      //que_es_Math_floor_Math_random_100_mas_1.txt
+      
+      let guessCount = 0; // esto es claro, es un almacen de intentos desde cero (original es 1)
+      
+     
+      
+
+    </script>
+  </body>
+</html>
