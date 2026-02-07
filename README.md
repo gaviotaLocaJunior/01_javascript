@@ -31,4 +31,18 @@ Paso uno // paso uno agregar variables
       //que_es_Math_floor_Math_random_100_mas_1.txt
 
 ## Funciones
+https://developer.mozilla.org/es/docs/Learn_web_development/Core/Scripting/A_first_splash#funciones
 una funcion que da un mensaje 00_sub01_funciones.html
+
+## Operadores
+https://developer.mozilla.org/es/docs/Learn_web_development/Core/Scripting/A_first_splash#operadores
+Puedo probar en Consola de dupuracion F12
+
+## Condicionales
+https://developer.mozilla.org/es/docs/Learn_web_development/Core/Scripting/A_first_splash#condicionales
+Hostia pagina original tiene ejemplo de codigo largo de puta madre
+
+## Eventos
+https://developer.mozilla.org/es/docs/Learn_web_development/Core/Scripting/A_first_splash#eventos
+Aqui me interesa porque no lo sabia
+Ejemplos simple del Claude
